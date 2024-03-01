@@ -28,7 +28,7 @@ info:
   app:
     name: "This is a review service"
     version: "1.0.0"
-    description: "This is a feedback service!"
+    description: "Adding and viewing product reviews."
 
 management:
   endpoint:
@@ -43,7 +43,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info, health, metrics, loggers
+        include: info, health, metrics, loggers, prometheus
   metrics:
     export:
       prometheus:
