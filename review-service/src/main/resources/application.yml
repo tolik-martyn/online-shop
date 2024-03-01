@@ -1,5 +1,5 @@
 server:
-  port : 8083
+  port: 8083
 spring:
   application:
     name: reviewservice
@@ -22,3 +22,32 @@ spring:
 eureka:
   instance:
     hostname: localhost
+
+# Actuator
+info:
+  app:
+    name: "This is a review service"
+    version: "1.0.0"
+    description: "This is a feedback service!"
+
+management:
+  endpoint:
+    health:
+      group:
+        custom:
+          include: diskSpace,ping
+          show-components: always
+          show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, loggers
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  info:
+    env:
+      enabled: true
